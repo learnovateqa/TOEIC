@@ -892,6 +892,68 @@ nav.main a:not([aria-current="page"]):hover{background:color-mix(in srgb,var(--s
 }
 @media print{.rv{opacity:1!important;transform:none!important}.toast,.confetti{display:none}nav.main{display:none!important}}
 @media (prefers-reduced-motion:reduce){.page-in *,.rv,.grow *,.toast,.confetti i,.hero-art .scene,.hero2 .scene,.chip.good,.rchip.good,.tool .tool-body{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.ring{transition:none}}
+
+/* ---- TOEIC Listening & Reading players ---- */
+.lt-screen,.rt-screen{display:flex;flex-direction:column;gap:14px}
+.lt-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--surface-2);border-radius:12px;padding:10px 14px}
+.lt-clock{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums;color:var(--live);min-height:1.2em}
+.lt-player{border-style:solid;padding:10px 14px}
+.lt-dir{background:var(--blue);border-radius:12px;padding:14px 16px}.lt-dir p{margin-top:6px}
+.lt-item{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.lt-photo{width:100%;max-width:460px}.lt-photo svg{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
+.lt-photo.sm{max-width:300px}
+.lt-num{font-weight:600}
+.lt-letters{display:flex;gap:10px;flex-wrap:wrap}
+.lt-let{position:relative;cursor:pointer}.lt-let input{position:absolute;opacity:0;width:1px;height:1px}
+.lt-let span{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;border:2px solid var(--line);font-weight:700;font-size:18px;background:var(--surface)}
+.lt-let input:checked+span{background:var(--navy);color:var(--navy-fg);border-color:var(--navy)}
+.lt-let input:focus-visible+span{outline:2px solid var(--hub);outline-offset:2px}
+.lt-qs{display:flex;flex-direction:column;gap:14px}
+.lt-q{border:1px solid var(--line);border-radius:12px;margin:0;padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.lt-q legend{padding:0 4px;font-weight:600}
+.lt-q.now{border-color:var(--live);box-shadow:0 0 0 2px var(--live-soft)}
+.lt-q .opt{padding:7px 12px}
+.lt-graphic{background:var(--surface-2);border-radius:12px;padding:12px;overflow-x:auto}
+.lt-graphic table{border-collapse:collapse;width:100%;font-size:14px}.lt-graphic th,.lt-graphic td{border:1px solid var(--line);padding:6px 8px;text-align:left}
+.lt-graphic .gtitle{font-weight:700;margin-bottom:6px}
+.lt-say{border-left:4px solid var(--live)}
+.rt-dir{font-size:14px;margin:0}
+.rt-five{display:flex;flex-direction:column;gap:14px}
+.rt-gap{display:inline-block;min-width:70px;border-bottom:2px solid var(--fg)}
+.rt-blank{display:inline-block;min-width:54px;text-align:center;font-weight:700;border-bottom:2px solid var(--live);color:var(--live);cursor:pointer;padding:0 6px}
+.rt-doc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.rt-doc+.rt-doc{margin-top:10px}
+.rt-doc-h{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.rt-text p{margin:0 0 8px}.rt-text p:last-child{margin:0}.rt-text table{border-collapse:collapse;font-size:14px;width:100%}.rt-text td,.rt-text th{border:1px solid var(--line);padding:5px 7px;text-align:left}
+.rt-text .hd{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.rt-chat p{margin:0 0 6px}.rt-chat b{font-weight:700}.rt-chat .t{color:var(--muted);font-size:12.5px}
+.rt-nav{position:sticky;bottom:8px;background:color-mix(in srgb,var(--surface) 92%,transparent);padding:8px;border-radius:14px;box-shadow:var(--shadow);z-index:3}
+.rt-map summary{cursor:pointer;font-weight:600;font-size:14px}
+.rt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:6px;margin-top:10px}
+.rt-cell{border:1.5px solid var(--line);background:var(--surface);border-radius:8px;height:34px;font-weight:600;font-size:12.5px;cursor:pointer}
+.rt-cell.on{background:var(--hub-soft);border-color:var(--hub);color:var(--hub)}.rt-cell.here{outline:2px solid var(--navy)}
+.rv-ctx{background:var(--surface-2);border-radius:12px;padding:10px 12px}.rv-ctx summary{cursor:pointer;font-weight:600}
+.rv-ctx .transcript{margin-top:8px}
+.rv-opts{margin:4px 0 2px;padding-left:22px;font-size:14px}.rv-opts li.right{color:var(--good);font-weight:600}.rv-opts li.wrong{color:var(--bad);text-decoration:line-through}
+/* ---- live tools (Stage 2) ---- */
+.lw-sort{display:flex;flex-direction:column;gap:8px}
+.lw-item{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--surface-2);border-radius:12px;padding:8px 12px}
+.lw-item .t{flex:1 1 220px;min-width:0}
+.lw-item .bs{display:flex;gap:6px;flex-wrap:wrap}
+.lw-item.ok{box-shadow:inset 4px 0 0 var(--good)}.lw-item.no{box-shadow:inset 4px 0 0 var(--bad)}
+.lw-item .fb{flex-basis:100%;font-size:13px;color:var(--muted)}
+.lw-pill{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 10px;font-weight:600;font-size:12.5px;cursor:pointer}
+.lw-pill[aria-pressed="true"]{background:var(--navy);color:var(--navy-fg);border-color:var(--navy)}
+.lw-clock{font-family:var(--body);font-size:46px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.lw-clock.low{color:var(--bad)}
+.lw-mark .seg{cursor:pointer;border-radius:4px;padding:0 2px;border-bottom:2px dotted var(--muted)}
+.lw-mark .seg.on{background:var(--peach)}.lw-mark .seg.key{background:color-mix(in srgb,var(--good) 25%,transparent)}.lw-mark .seg.no{background:color-mix(in srgb,var(--bad) 20%,transparent)}
+.gp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.gp-out{display:grid;gap:8px;margin-top:10px}.gp-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--surface-2);border-radius:12px;padding:8px 12px}
+
+/* dark mode: the navy primary button disappears on a dark surface, so invert it */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{background:#E8ECF6;border-color:#E8ECF6;color:#10172A}}
+:root[data-theme="dark"] .btn.primary{background:#E8ECF6;border-color:#E8ECF6;color:#10172A}
 </style>
 </head>
 <body>
@@ -914,6 +976,10 @@ nav.main a:not([aria-current="page"]):hover{background:color-mix(in srgb,var(--s
 <main><div class="wrap" id="app"></div></main>
 <footer><div class="wrap"><p class="foot1">© 2026 Elevate with Ms. Maria · Learnovate Qatar · <a href="#teacher">Teacher portal</a> · <a href="https://learnovateqa.github.io/the-english-academy/dictionary/" target="_blank" rel="noopener">📖 Dictionary & Thesaurus</a> · <a href="https://learnovateqa.github.io/the-english-academy/guide/" target="_blank" rel="noopener">❓ How to use</a></p><p>TOEIC Prep Course · Elevate with Ms. Maria · Learnovate Qatar is an independent prep course. It is not affiliated with or endorsed by ETS. TOEIC is a registered trademark of ETS. All practice questions, passages, audio scripts and sample answers are original. Your practice saves to your class with your personal access code.</p></div></footer>
 
+<script src="assets/scenes.js"></script>
+<script src="assets/practice-scenes.js"></script>
+<script src="practice/listening.js"></script>
+<script src="practice/reading.js"></script>
 <script>
 /* ---------- settings ---------- */
 const CONFIG={
@@ -1222,8 +1288,10 @@ const TEST_MAP={
  S:{name:'Speaking',time:'about 20 min',count:'11 questions',parts:[['Q1–2 · Read a text aloud','45s / 45s','prepare / read'],['Q3–4 · Describe a picture','45s / 30s','prepare / speak'],['Q5–7 · Respond to questions','3s / 15s, 15s, 30s','prepare / speak'],['Q8–10 · Respond using information provided','45s to read · 3s / 15s, 15s, 30s','Q10 is heard twice'],['Q11 · Express an opinion','45s / 60s','prepare / speak']],tip:'Recorded on a computer. Questions 1–10 are rated 0–3 and Question 11 is rated 0–5. Scaled score 0–200.'},
  W:{name:'Writing',time:'about 60 min',count:'8 questions',parts:[['Q1–5 · Write a sentence based on a picture','8 min for all 5','Use both given words in one sentence.'],['Q6–7 · Respond to a written request','10 min each','Answer an email and do every task it asks.'],['Q8 · Write an opinion essay','30 min','Typically 300 words or more.']],tip:'Typed on a computer. Q1–5 are rated 0–3, Q6–7 0–4 and Q8 0–5. Scaled score 0–200.'}};
 
-/* ---------- practice content (added in the next stage) ---------- */
-const QUIZ={},WRITE={},SPEAK={};
+/* ---------- practice content: Listening and Reading sets in practice/*.js; Speaking and Writing tasks added with their tools ---------- */
+const QUIZ=Object.assign({},window.QUIZ_DATA||{}),WRITE={},SPEAK={};
+// Study Hub steps for each session (Speaking and Writing steps are added with their tools)
+Object.entries({1:['DL','DR','DIAG'],2:['L1','L2','L3'],3:['L4','L5','L6','L7'],4:['R1','R2','R3'],5:['R4','R5','G1'],6:['R6','R7','R8'],7:['R9','R10'],8:['V1','V2','V3'],12:['D1','READY']}).forEach(([n,t])=>{SESSIONS[n-1].tools=t});
 /* ---------- state helpers ---------- */
 const tasksDone=()=>store.get('tasks',{});
 const results=()=>store.get('res',{});
@@ -1333,7 +1401,7 @@ const TTS=(()=>{
   const FEM=/female|google us english|samantha|karen|moira|tessa|victoria|allison|ava\b|susan|zira|aria|jenny|clara|libby|sonia|serena|fiona|catherine|nicky|emma|michelle|natasha|hazel|kate\b|zoe|linda|heather|nora|olivia|sara|amy|joanna|kendra|kimberly|salli|ivy|ruth|nancy|sonia|maisie|isla|sienna/i;
   const MAL=/\bmale|richard|daniel|alex\b|tom\b|oliver|david|mark\b|guy\b|ryan|liam|arthur|aaron|evan|nathan|thomas|george|james|rishi|christopher|eric|andrew|brian|william|matthew|roger|steffan|joey|justin|kevin|stephen|connor|elliot|davis|tony|jason|reed/i;
   // every speaker in every listening script, so each person always gets a voice of the right gender
-  const GENDER={Reporter:'f',Narrator:'f',Woman:'f',Man:'m',Customer:'f',Pharmacist:'m',Librarian:'f',Receptionist:'f',Advisor:'f',Staff:'f',Clerk:'m',Agent:'m',Employee:'m',Worker:'m',Visitor:'m',
+  const GENDER={Reporter:'f',Narrator:'f',Woman:'f',Man:'m','Woman 2':'f','Man 2':'m',Customer:'f',Pharmacist:'m',Librarian:'f',Receptionist:'f',Advisor:'f',Staff:'f',Clerk:'m',Agent:'m',Employee:'m',Worker:'m',Visitor:'m',
     Aisha:'f',Dana:'f',Diane:'f',Elena:'f',Ellen:'f',Farah:'f',Grace:'f',Hannah:'f',Joy:'f',Leila:'f',Lena:'f',Linda:'f',Lisa:'f',Lucy:'f',Mei:'f',Mia:'f',Nora:'f',Olivia:'f',Priya:'f',Rosa:'f',Sarah:'f',Tara:'f',
     Ahmed:'m',Amir:'m',Ben:'m',Daniel:'m',Hassan:'m',Jake:'m',Jordan:'m',Jun:'m',Kevin:'m',Kofi:'m',Leo:'m',Lucas:'m',Marcus:'m',Okafor:'m',Omar:'m',Paul:'m',Raj:'m',Sam:'m',Tom:'m',Victor:'m'};
   let voices=[],gen=0;
@@ -1374,6 +1442,7 @@ const TTS=(()=>{
   return {OK,play,stopAll,test,ready,voices:()=>(load(),voices)}})();
 
 const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+const fmtLeft=s=>s>60?`${Math.ceil(s/60)} minutes`:s>0?`${s} second${s===1?'':'s'}`:'0 seconds';
 let audioCtx=null;function beep(f=880){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.frequency.value=f;g.gain.value=.08;o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.25)}catch(e){}}
 
 /* ---------- views ---------- */
@@ -1547,10 +1616,10 @@ function renderSession(s){
 
 /* ---------- Study Hub step path ---------- */
 function stepMeta(t){
-  if(QUIZ[t]){const q=QUIZ[t],n=q.qs.length;
-    if(q.kind==='listen')return {k:'L',type:'Listening',what:'Read the situation, press Play once, then answer. The audio does not repeat.',info:[`${q.minutes} min`,`${n} questions`,'Audio plays once'],need:'Headphones'};
-    if(q.kind==='read')return {k:'R',type:'Reading',what:'Read the questions first, then scan the text for the answers. The timer starts when you press Start.',info:[`${q.minutes} min`,`${n} questions`,'Timed']};
-    return {k:'O',type:'Drill',what:'Answer each question, then check your answers. There is no timer.',info:[`${n} questions`,'No timer']}}
+  if(QUIZ[t]){const q=QUIZ[t],n=q.kind==='mc'?q.qs.length:flatQs(quizParts(q)).length,pp=q.kind==='mc'?[]:[...new Set(quizParts(q).map(p=>p.part))];const pl=pp.length?`Part${pp.length>1?'s':''} ${pp.join(', ')}`:'';
+    if(q.kind==='listen')return {k:'L',type:'Listening',what:'The audio plays once and moves on by itself, like the test. Look at the picture or read the questions, listen, and choose during the pauses.',info:[pl,`${n} questions`,'Audio plays once'],need:'Headphones'};
+    if(q.kind==='read')return {k:'R',type:'Reading',what:'Read the question first, then find the proof in the text. One timer runs for the whole set, and you can go back until you finish.',info:[pl,`${n} questions`,`${q.minutes} min`]};
+    return {k:'O',type:'Drill',what:'Answer each question, then check your answers. Every answer has a short explanation. There is no timer.',info:[`${n} questions`,'No timer']}}
   if(WRITE[t]){const w=WRITE[t];return {k:'W',type:'Writing',what:w.kind==='essay'?'Plan for 5 minutes, write at least 300 words, then check your work. State your opinion and support it.':'Read the email and the directions, then do every task they ask for. Check your work before time is up.',info:[`${w.minutes} min`,w.kind==='essay'?'300+ words':'Email']}}
   if(SPEAK[t]){const k=SPEAK[t];return {k:'S',type:'Speaking',what:'Prepare, then speak until the timer ends. The website records your answer so you can listen back.',info:[`${k.prep}s prep`,`${k.speak}s speak`],need:'Microphone (or a phone voice recorder)'}}
   {const mm=String(t).match(/^MK(\d+)([LRWS]?)$/);if(mm){const secs=mm[2]?[mm[2]]:MOCK_ORDER;return {k:mm[2]||'O',type:'Mock test',what:mm[2]?`Take the ${MOCK_SEC[mm[2]][0]} section of ${MOCKS[mm[1]]?MOCKS[mm[1]].title:'the mock'} in one sitting, with real timers.`:'Take all four sections in order, like test day.',info:secs.map(k=>MOCK_SEC[k][0]+' '+MOCK_SEC[k][1]),noIntro:true}}}
@@ -1673,8 +1742,161 @@ function TestGuide(){const sec=(k,h,body)=>`<section class="panel stack gd" styl
     tbl(['Speaking score ranges','Writing score ranges'],[['190–200','200'],['160–180','170–190'],['130–150','140–160'],['110–120','110–130'],['80–100','90–100'],['60–70','70–80'],['40–50','50–60'],['0–30','40'],['','0–30']])+
     `<p class="muted" style="font-size:13px;margin:0">Each range has its own proficiency description on the official score report: 8 for Speaking and 9 for Writing.</p>`)}
   ${sec('O','Official information',`<p>Always check the latest rules, dates and ID requirements with ETS or your local test centre before you book.</p>`+ul(['<a href="https://www.ets.org/toeic.html" target="_blank" rel="noopener">The official TOEIC website (ETS)</a>: test formats, sample questions and score information'])+`<p class="muted" style="font-size:12.5px;margin:0">This course is independent. It is not affiliated with or endorsed by ETS.</p>`)}`}
-/* ---------- Quiz tool (listening / reading / mc) ---------- */
-function Quiz(host,s,key){
+/* ---------- TOEIC Listening & Reading engine (Study Hub practice sets and the mock tests) ----------
+   A set of parts: [{part:1..7, sets:[…]}]
+   Part 1 set: {img:'scene key', o:[4 spoken statements], a, why, who}
+   Part 2 set: {q:'spoken question', o:[3 spoken responses], a, why, who:[asker, responder]}
+   Part 3/4 set: {audio:[[speaker,text]…], graphic:'html'?, kind:'conversation'|'talk'|'telephone message'…, qs:[{q,o,a,why,t}]}
+   Part 5 set: {q:'sentence with ____', o, a, why, t:'g'|'v'}
+   Part 6 set: {kind:'e-mail', text:'html with {1}…{4}', qs:[{o,a,why,t}]}   (a question with no q is the sentence-insertion blank)
+   Part 7 set: {texts:[{h:'E-mail', html}], qs:[{q,o,a,why,t}]}                                            */
+const LETTERS='ABCD';
+const quizParts=q=>q.parts||[{part:q.part,sets:q.sets}];
+// one entry per question, in test order
+function flatQs(parts,start=1){const out=[];let n=start;
+  parts.forEach((p,pi)=>p.sets.forEach((st,si)=>{(p.part<=2||p.part===5?[st]:st.qs).forEach((x,qi)=>out.push({pi,si,qi,part:p.part,set:st,x,id:`${pi}-${si}-${qi}`,n:n++}))}));return out}
+// spread the correct answers across A–D (deterministic, so the review always matches)
+let BAL_N=0;
+function balanceParts(parts){parts.forEach(p=>p.sets.forEach(st=>(p.part<=2||p.part===5?[st]:st.qs).forEach(x=>{
+  if(x.fixed||!x.o)return;const len=x.o.length,target=(BAL_N++*(len===3?2:3)+1)%len,shift=(x.a-target+len)%len;
+  x.o=x.o.slice(shift).concat(x.o.slice(0,shift));x.a=target})))}
+// all the words a test taker heard or read for one question (used for the automatic error cause)
+function srcOf(p,st){if(p===1)return (window.SCENE_ALT||{})[st.img]||'';if(p===2)return st.q||'';if(p<=4)return (st.audio||[]).map(l=>l[1]).join(' ');
+  if(p===5)return st.q||'';if(p===6)return String(st.text||'').replace(/<[^>]+>/g,' ');return (st.texts||[]).map(t=>String(t.html).replace(/<[^>]+>/g,' ')).join(' ')}
+const PART_NAME={1:'Photographs',2:'Question-Response',3:'Conversations',4:'Talks',5:'Incomplete Sentences',6:'Text Completion',7:'Reading Comprehension'};
+const PART_DIR={1:'For each question, you will hear four statements about a picture. Choose the statement that best describes what you see. The statements are not printed and are spoken only once.',
+ 2:'You will hear a question or statement and three responses. Choose the best response. They are not printed and are spoken only once.',
+ 3:'You will hear some conversations. Answer three questions about each one. The conversations are spoken only once.',
+ 4:'You will hear some talks given by one speaker. Answer three questions about each talk. The talks are spoken only once.',
+ 5:'A word or phrase is missing in each sentence. Choose the best answer to complete the sentence.',
+ 6:'Read the texts. A word, phrase or sentence is missing in parts of each text. Choose the best answer to complete the text.',
+ 7:'Read the texts and answer the questions. Choose the best answer to each question.'};
+const graphicHTML=g=>g?`<div class="lt-graphic">${g}</div>`:'';
+// printed question block for Parts 3/4 (and the review)
+const qBlock=(f,ans,name,disabled)=>`<fieldset class="lt-q" data-qid="${f.id}"><legend><b>${f.n}.</b> ${esc(f.x.q)}</legend>${f.x.o.map((o,j)=>`<label class="opt"><input type="radio" name="${name}-${f.id}" value="${j}" ${ans[f.id]===j?'checked':''} ${disabled?'disabled':''}><span><b>(${LETTERS[j]})</b> ${esc(o)}</span></label>`).join('')}</fieldset>`;
+const letterRow=(f,ans,name,n)=>`<div class="lt-letters" role="radiogroup" aria-label="Question ${f.n}">${LETTERS.slice(0,n).split('').map((L,j)=>`<label class="lt-let"><input type="radio" name="${name}-${f.id}" value="${j}" ${ans[f.id]===j?'checked':''}><span>${L}</span></label>`).join('')}</div>`;
+
+/* Listening: plays like the test. Every recording plays once, the test moves on by itself, and you answer during the pauses.
+   cfg: {parts, name, state:{u, ans}, save(state), onFinish(ans), gap:{1:5,2:5,3:8}} */
+function ListenTest(host,cfg){
+  const parts=cfg.parts,fq=flatQs(parts),st=cfg.state||{u:0,ans:{}};st.ans=st.ans||{};const name=cfg.name||'lt';
+  // units: a part's directions, then one unit per Part 1/2 question or per Part 3/4 set
+  const units=[];parts.forEach((p,pi)=>{units.push({dir:true,p});p.sets.forEach((set,si)=>units.push({p,pi,si,set,fs:fq.filter(f=>f.pi===pi&&f.si===si)}))});
+  let alive=true,stopTTS=()=>{};const token={};host._lt=token;
+  const live=()=>alive&&host.isConnected&&host._lt===token;
+  const save=()=>{if(cfg.save)cfg.save(st)};
+  const wait=(sec,label)=>new Promise(res=>{let left=sec;const el=host.querySelector('[data-lt-clock]');const tick=()=>{if(!live())return;if(el)el.textContent=label?`${label} · ${left}s`:'';if(left<=0){clearInterval(iv);res()}left--};const iv=every(tick,window.__TOEIC_FAST?40:1000);tick()});
+  // speak lines once; if this browser has no voices, show the words instead and wait about as long as speech would take
+  const say=lines=>new Promise(res=>{if(!live())return;const box=host.querySelector('[data-lt-say]');
+    const fallback=()=>{if(box){box.hidden=false;box.innerHTML=lines.map(([w,t])=>`<p><b>${esc(w==='Narrator'?'':w+':')}</b> ${esc(t)}</p>`).join('')}
+      const secs=Math.max(2,Math.round(lines.reduce((a,l)=>a+String(l[1]).split(/\s+/).length,0)/2.6));wait(secs,'Read').then(()=>{if(box)box.hidden=true;res()})};
+    if(!TTS.OK||cfg.noAudio)return fallback();
+    host.querySelector('.player')&&host.querySelector('.player').classList.add('playing');
+    stopTTS=TTS.play(lines,{cast:cfg.cast,onEnd:ok=>{const pl=host.querySelector('.player');if(pl)pl.classList.remove('playing');if(!live())return;if(ok)res();else fallback()}})});
+  const bindAns=()=>host.querySelectorAll('input[type=radio]').forEach(r=>r.addEventListener('change',()=>{st.ans[r.name.slice(name.length+1)]=+r.value;save()}));
+  const frame=(inner,sub)=>`<div class="lt-screen"><div class="lt-top"><b>${esc(sub)}</b><span class="spacer"></span><span class="lt-clock" data-lt-clock></span></div>
+    <div class="player lt-player"><div class="wave">${'<i></i>'.repeat(14)}</div><span class="muted" style="font-size:13px">Audio plays once · it moves on by itself</span></div>
+    <div class="transcript lt-say" data-lt-say hidden></div>${inner}</div>`;
+  async function run(){
+    while(live()&&st.u<units.length){const U=units[st.u],resumed=!!st.started;st.started=true;save();
+      if(U.dir){const p=U.p.part;host.innerHTML=frame(`<div class="lt-dir"><div class="eyebrow">Part ${p} · ${PART_NAME[p]}</div><p>${PART_DIR[p]}</p></div>`,`Part ${p} · Directions`);
+        if(!resumed)await say([['Narrator',`Part ${p}. ${PART_DIR[p]}`]]);else await wait(2);}
+      else{const p=U.p.part,f0=U.fs[0],gap=(cfg.gap||{})[p]||(p<=2?5:8);
+        if(p<=2){const f=f0,x=f.set;
+          host.innerHTML=frame(`<div class="lt-item">${p===1?`<div class="lt-photo">${(window.SCENES||{})[x.img]||''}</div>`:''}<p class="lt-num">${f.n}. Mark your answer.</p>${letterRow(f,st.ans,name,p===1?4:3)}</div>`,`Part ${p} · Question ${f.n}`);bindAns();
+          if(!resumed){const who=x.who||[];
+            const lines=p===1?[['Narrator',`Number ${f.n}.`]].concat(x.o.map((o,j)=>[who[0]||'Man',`${LETTERS[j]}. ${o}`]))
+              :[['Narrator',`Number ${f.n}.`],[who[0]||'Woman',x.q]].concat(x.o.map((o,j)=>[who[1]||'Man',`${LETTERS[j]}. ${o}`]));
+            await say(lines)}
+          await wait(gap,'Answer now')}
+        else{const x=U.set,nums=`${U.fs[0].n}–${U.fs[U.fs.length-1].n}`;
+          host.innerHTML=frame(`<p class="mk-info"><span class="i" aria-hidden="true">i</span><span>Questions ${nums} refer to the following ${esc(x.kind||(p===3?'conversation':'talk'))}${x.graphic?' and graphic':''}.</span></p>${graphicHTML(x.graphic)}<div class="lt-qs">${U.fs.map(f=>qBlock(f,st.ans,name)).join('')}</div>`,`Part ${p} · Questions ${nums}`);bindAns();
+          if(!resumed){await wait(cfg.readAhead!=null?cfg.readAhead:6,'Read the questions');
+            await say([['Narrator',`Questions ${nums} refer to the following ${x.kind||(p===3?'conversation':'talk')}${x.graphic?' and graphic':''}.`]].concat(x.audio))}
+          for(const f of U.fs){if(!live())return;const box=host.querySelector(`[data-qid="${f.id}"]`);if(box)box.classList.add('now');
+            if(!resumed)await say([['Narrator',`Number ${f.n}. ${f.x.q}`]]);await wait(x.graphic?gap+4:gap,'Answer now');if(box)box.classList.remove('now')}}}
+      if(!live())return;st.u++;st.started=false;save()}
+    if(live())cfg.onFinish(st.ans)}
+  host.addEventListener('lt-stop',()=>{alive=false;stopTTS()},{once:true});
+  run();
+  return ()=>{alive=false;stopTTS()}}
+
+/* Reading: one timer for the whole set; move freely between pages and change answers until you finish.
+   cfg: {parts, minutes, name, state:{p, ans, deadline}, save(state), onFinish(ans, auto)} */
+function ReadTest(host,cfg){
+  const parts=cfg.parts,fq=flatQs(parts,cfg.start||1),st=cfg.state||{};st.ans=st.ans||{};st.p=st.p||0;const name=cfg.name||'rt';
+  const pages=[];parts.forEach((p,pi)=>{if(p.part===5){for(let i=0;i<p.sets.length;i+=5)pages.push({part:5,fs:fq.filter(f=>f.pi===pi&&f.si>=i&&f.si<i+5)})}
+    else p.sets.forEach((set,si)=>pages.push({part:p.part,set,fs:fq.filter(f=>f.pi===pi&&f.si===si)}))});
+  if(!st.deadline){st.deadline=Date.now()+cfg.minutes*60000}const save=()=>{if(cfg.save)cfg.save(st)};save();
+  let done=false;
+  const blanks=(text,fs)=>String(text).replace(/\{(\d)\}/g,(m,k)=>{const f=fs[+k-1];return f?`<span class="rt-blank" data-goto="${f.id}">${f.n}</span>`:m});
+  const draw=()=>{const P=pages[st.p];const answered=fq.filter(f=>st.ans[f.id]!=null).length;
+    let left='',right='';
+    if(P.part===5)right=P.fs.map(f=>`<fieldset class="lt-q" data-qid="${f.id}"><legend><b>${f.n}.</b> ${esc(f.x.q).replace(/_{3,}/,'<span class="rt-gap">______</span>')}</legend>${f.x.o.map((o,j)=>`<label class="opt"><input type="radio" name="${name}-${f.id}" value="${j}" ${st.ans[f.id]===j?'checked':''}><span><b>(${LETTERS[j]})</b> ${esc(o)}</span></label>`).join('')}</fieldset>`).join('');
+    else{left=P.part===6?`<p class="mk-info"><span class="i">i</span><span>Questions ${P.fs[0].n}–${P.fs[P.fs.length-1].n} refer to the following ${esc(P.set.kind||'text')}.</span></p><div class="rt-text">${blanks(P.set.text,P.fs)}</div>`
+        :`<p class="mk-info"><span class="i">i</span><span>Questions ${P.fs[0].n}–${P.fs[P.fs.length-1].n} refer to the following ${esc(P.set.kind||(P.set.texts.length>1?'texts':'text'))}.</span></p>${P.set.texts.map(t=>`<div class="rt-doc"><div class="rt-doc-h">${esc(t.h||'')}</div><div class="rt-text">${t.html}</div></div>`).join('')}`;
+      right=P.fs.map(f=>qBlock(Object.assign({},f,{x:Object.assign({},f.x,{q:f.x.q||'Choose the best answer.'})}),st.ans,name)).join('')}
+    host.innerHTML=`<div class="rt-screen"><div class="lt-top"><b>Part ${P.part} · ${PART_NAME[P.part]}</b><span class="muted" style="font-size:13px">Page ${st.p+1} of ${pages.length} · ${answered}/${fq.length} answered</span><span class="spacer"></span><span class="timer" data-rt-timer></span></div>
+     ${st.p===0||pages[st.p-1].part!==P.part?`<p class="muted rt-dir">${PART_DIR[P.part]}</p>`:''}
+     ${P.part===5?`<div class="rt-five">${right}</div>`:`<div class="mk-panes rt-panes"><div class="mk-left">${left}</div><div class="mk-right">${right}</div></div>`}
+     <div class="row rt-nav"><button class="btn" data-rt="prev" ${st.p?'':'disabled'}>← Back</button><button class="btn primary" data-rt="next">${st.p<pages.length-1?'Next →':'Finish and score'}</button><span class="spacer"></span><button class="btn sm" data-rt="finish">Finish now</button></div>
+     <details class="rt-map"><summary>All questions · ${answered}/${fq.length} answered</summary><div class="rt-grid">${pages.map((pg,i)=>pg.fs.map(f=>`<button class="rt-cell ${st.ans[f.id]!=null?'on':''} ${i===st.p?'here':''}" data-page="${i}" aria-label="Question ${f.n}">${f.n}</button>`).join('')).join('')}</div></details></div>`;
+    host.querySelectorAll('input[type=radio]').forEach(r=>r.addEventListener('change',()=>{st.ans[r.name.slice(name.length+1)]=+r.value;save();const m=host.querySelector('.rt-map summary');if(m)m.textContent=`All questions · ${fq.filter(f=>st.ans[f.id]!=null).length}/${fq.length} answered`}));
+    host.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{st.p=+b.dataset.page;save();draw();host.scrollIntoView({block:'start'})}));
+    host.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>{const q=host.querySelector(`[data-qid="${b.dataset.goto}"]`);if(q)q.scrollIntoView({behavior:'smooth',block:'center'})}));
+    host.querySelector('[data-rt="prev"]').onclick=()=>{st.p--;save();draw();host.scrollIntoView({block:'start'})};
+    host.querySelector('[data-rt="next"]').onclick=()=>{if(st.p<pages.length-1){st.p++;save();draw();host.scrollIntoView({block:'start'})}else finish(false)};
+    host.querySelector('[data-rt="finish"]').onclick=()=>finish(false);tick()};
+  const finish=auto=>{if(done)return;const miss=fq.filter(f=>st.ans[f.id]==null).length;
+    if(!auto&&miss&&!confirm(`${miss} question${miss>1?'s are':' is'} not answered. A guess cannot lose points. Finish anyway?`))return;done=true;cfg.onFinish(st.ans,auto)};
+  const tick=()=>{const el=host.querySelector('[data-rt-timer]');const left=Math.max(0,Math.round((st.deadline-Date.now())/1000));if(el){el.textContent=fmtLeft(left);el.classList.toggle('low',left<=Math.min(300,cfg.minutes*12))}if(left<=0&&!done)finish(true)};
+  every(()=>{if(host.isConnected&&!done)tick()},1000);draw()}
+
+// review after a set or a mock section: score by part, then every question with the answer and why
+function reviewHTML(parts,ans,opts={}){const fq=flatQs(parts,opts.start||1);const byPart={};fq.forEach(f=>{const b=byPart[f.part]=byPart[f.part]||{ok:0,n:0};b.n++;if(ans[f.id]===f.x.a)b.ok++});
+  const seen=new Set();
+  return `<div class="mock-parts">${Object.entries(byPart).map(([p,b])=>`<div><b>Part ${p} · ${PART_NAME[p]}</b><span class="rchip ${b.ok/b.n>=.75?'good':b.ok/b.n>=.5?'mid':'low'}">${b.ok}/${b.n}</span></div>`).join('')}</div>
+  <div class="stack" style="gap:12px">${fq.map(f=>{const a=ans[f.id],ok=a===f.x.a,key=f.pi+'-'+f.si;let ctx='';
+    if(!seen.has(key)){seen.add(key);const st=f.set;
+      if(f.part===1)ctx=`<div class="lt-photo sm">${(window.SCENES||{})[st.img]||''}</div>`;
+      if(f.part>=3&&f.part<=4)ctx=`<details class="rv-ctx"><summary>Transcript · Questions ${f.n}–${f.n+st.qs.length-1}</summary>${graphicHTML(st.graphic)}<div class="transcript">${st.audio.map(([w,t])=>`<p><b>${esc(w)}:</b> ${esc(t)}</p>`).join('')}</div></details>`;
+      if(f.part===6)ctx=`<details class="rv-ctx"><summary>The text · Questions ${f.n}–${f.n+st.qs.length-1}</summary><div class="rt-text">${String(st.text).replace(/\{(\d)\}/g,(m,k)=>`<b>[${f.n+ +k-1}]</b>`)}</div></details>`;
+      if(f.part===7)ctx=`<details class="rv-ctx"><summary>The text${st.texts.length>1?'s':''} · Questions ${f.n}–${f.n+st.qs.length-1}</summary>${st.texts.map(t=>`<div class="rt-doc"><div class="rt-doc-h">${esc(t.h||'')}</div><div class="rt-text">${t.html}</div></div>`).join('')}</details>`}
+    const stem=f.part===1?'Which statement describes the picture?':f.part===2?`“${f.set.q}”`:f.x.q||'Choose the sentence that fits the blank.';
+    return `${ctx}<div class="mock-q ${ok?'ok':'no'}"><b>${ok?'✓':'✗'} ${f.n}. ${esc(stem)}</b>
+      ${f.part<=2?`<ol class="rv-opts" type="A">${f.x.o.map((o,j)=>`<li class="${j===f.x.a?'right':j===a?'wrong':''}">${esc(o)}</li>`).join('')}</ol>`:''}
+      <span>Your answer: ${a!=null?`(${LETTERS[a]}) ${esc(f.x.o[a])}`:'<i>none</i>'}${ok?'':` · Correct: <b>(${LETTERS[f.x.a]}) ${esc(f.x.o[f.x.a])}</b>`}</span>${f.x.why?`<span class="muted">${esc(f.x.why)}</span>`:''}</div>`}).join('')}</div>`}
+// score a set and log every miss in the Error Log
+function scoreParts(parts,ans,logBase,opts={}){const fq=flatQs(parts,opts.start||1);let score=0;
+  fq.forEach(f=>{const a=ans[f.id];if(a===f.x.a){score++;return}
+    const stem=f.part===1?'photo':f.part===2?f.set.q:(f.x.q||'sentence insertion');
+    addLog(Object.assign({part:f.part,item:`${logBase.title} · Part ${f.part} · Q${f.n}: ${stem}`,yours:a!=null?f.x.o[a]:'(no answer)',correct:f.x.o[f.x.a],why:f.x.why||''},logBase.entry),
+      {q:f.x.q||(f.part===2?f.set.q:''),o:f.x.o,t:f.x.t,src:srcOf(f.part,f.set)})});
+  return {score,total:fq.length}}
+
+// spread correct answers across the letters in every practice set, so "always B" never pays
+Object.values(QUIZ).forEach(q=>{if(q.kind==='mc'){q.qs.forEach(x=>{if(x.fixed)return;const len=x.o.length,target=(BAL_N++*3+1)%len,shift=(x.a-target+len)%len;x.o=x.o.slice(shift).concat(x.o.slice(0,shift));x.a=target})}else balanceParts(quizParts(q))});
+/* ---------- Study Hub practice set (Listening Parts 1–4 or Reading Parts 5–7, like the test) ---------- */
+function Quiz(host,s,key){const q=QUIZ[key];if(q.kind==='mc')return Drill(host,s,key);
+  const rk=s.n+':'+key,prior=results()[rk],parts=quizParts(q),fq=flatQs(parts),L=q.kind==='listen';
+  host.innerHTML=`<div class="tool sp-tool"><div class="mock-bar test"><div class="mb-t"><b>${esc(q.title)}</b><span>${L?'Listening · audio plays once':`Reading · ${q.minutes} minutes`}${prior?` · Last score ${prior.score}/${prior.total}`:''}</span></div></div>
+   <div class="tool-body"><div data-run></div></div></div>`;
+  const box=host.querySelector('[data-run]');let started=false;
+  const ready=()=>{box.innerHTML=`<div class="stack" style="gap:10px"><p class="muted" style="margin:0">${fq.length} questions · ${L?'Press Start when your headphones are on. The audio plays once and moves on by itself. Choose your answers during the pauses.':`One timer for the whole set: ${q.minutes} minutes. You can go back and change answers until you finish.`}</p>
+    <div class="row" style="gap:8px"><button class="btn primary" data-go>Start →</button>${L?'<button class="btn" data-snd>🔊 Sound check</button>':''}</div></div>`;
+    box.querySelector('[data-go]').onclick=start;const sc=box.querySelector('[data-snd]');if(sc)sc.onclick=()=>TTS.test()};
+  const start=()=>{if(started)return;started=true;TTS.stopAll();
+    const fin=(ans,auto)=>{const r=scoreParts(parts,ans,{title:q.title,entry:{session:s.n,skill:L?'Listening':'Reading'}});
+      const rr=results();rr[rk]={score:r.score,total:r.total,pct:Math.round(r.score/r.total*100),at:Date.now()};store.set('res',rr);
+      box.innerHTML=`<div class="result"><span class="big mono">${r.score}/${r.total}</span><div>${auto?'Time is up, so your answers were submitted. ':''}${r.score===r.total?'Perfect set!':`${r.total-r.score} miss${r.total-r.score>1?'es':''} added to your <a href="#log">Error Log</a>, each with a cause and “How to fix”.`}${L?' Open each transcript and find the words that prove the answer.':''}</div></div>
+       <div class="row"><button class="btn" data-again>Try again</button></div>${reviewHTML(parts,ans)}`;
+      box.querySelector('[data-again]').onclick=()=>{started=false;ready()}};
+    if(L)ListenTest(box,{parts,name:'q'+key,onFinish:a=>fin(a,false),cast:fq.flatMap(f=>(f.set.audio||[]).map(l=>l[0]))});
+    else ReadTest(box,{parts,minutes:q.minutes,name:'q'+key,onFinish:fin})};
+  ready();host.addEventListener('stepstart',start,{once:true})}
+
+/* ---------- Drill tool (self-grading multiple choice, no timer) ---------- */
+function Drill(host,s,key){
   const q=QUIZ[key];const rk=s.n+':'+key;
   const prior=results()[rk];
   let remaining=q.minutes*60,timerId=null,submitted=false,played=false;
@@ -1714,13 +1936,13 @@ function Quiz(host,s,key){
       else{const sel=host.querySelector(`input[name="${selName(i)}"]:checked`);v=sel?+sel.value:-1;host.querySelectorAll(`input[name="${selName(i)}"]`).forEach(r=>r.disabled=true);
         host.querySelector(`[data-opt="${i}-${x.a}"]`).classList.add('right');if(v!==x.a&&v>=0)host.querySelector(`[data-opt="${i}-${v}"]`).classList.add('wrong')}
       if(v===x.a)score++;else{
-        addLog({session:s.n,skill:q.kind==='read'?'Reading':q.kind==='listen'?'Listening':'Drill',item:`${q.title}: Q${i+1} ${x.q}`,yours:v>=0?x.o[v]:'(no answer)',correct:x.o[x.a]})}
+        addLog({session:s.n,skill:'Drill',part:x.part||q.part||0,item:`${q.title}: Q${i+1} ${x.q}`,yours:v>=0?x.o[v]:'(no answer)',correct:x.o[x.a],why:x.why||''},{q:x.q,o:x.o,t:x.t,src:x.ctx||q.context||''})}
       const w=host.querySelector(`[data-why="${i}"]`);w.textContent=(q.kind==='read'?(v===x.a?'✓ Correct. ':`✗ Answer: ${x.o[x.a].replace(/[.!?]$/,'')}. `):'')+x.why;w.hidden=false});
     const pct=Math.round(score/q.qs.length*100);const r=results();r[rk]={score,total:q.qs.length,pct,at:Date.now()};store.set('res',r);
     if(q.kind==='listen')showTranscript();
     host.querySelector('[data-submit]').hidden=true;host.querySelector('[data-retake]').hidden=false;
     host.querySelector('[data-out]').innerHTML=`<div class="result"><span class="big mono">${score}/${q.qs.length}</span><div>${auto?'Time is up. Answers were submitted automatically. ':''}${score===q.qs.length?'Perfect set.':`${q.qs.length-score} miss${q.qs.length-score>1?'es':''} added to your <a href="#log">Error Log</a>. Tag each one with a cause.`}${q.kind==='listen'?' Now audit the transcript: find the line that proves each answer.':''}</div></div>`}
-  host.querySelector('[data-retake]').addEventListener('click',()=>{host.dataset.retake='1';Quiz(host,s,key)});
+  host.querySelector('[data-retake]').addEventListener('click',()=>{host.dataset.retake='1';Drill(host,s,key)});
 }
 
 /* ---------- Writing tool (TOEIC Writing Questions 6–7 email and Question 8 essay) ---------- */
@@ -2044,6 +2266,188 @@ function TeacherGuide(g){return `<section class="panel stack guide" style="gap:1
     <div><span class="lab">Ask</span><ul>${b.ask.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
     <div><span class="lab">Watch for</span><ul>${b.watch.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div><p class="gtip">⏱ ${esc(b.tip)}</p></details>`).join('')}</section>`}
 
+/* ---------- Live tools for class (Sessions 1–8 and 12) ----------
+   Small reusable engines fed with session data: Sorter, Poll, Proof Finder (mark), Timer, plus the Session 1 tools. */
+const wid=()=>'w'+Math.random().toString(36).slice(2,8);
+// Sorter: put each item in the right group. items: [text, groupIndex, why?]
+function Sorter(cfg){return ()=>`<div class="lw-sort" data-widget="sorter" data-cfg="${cfg.id}"><p class="muted" style="font-size:13.5px;margin:0">${esc(cfg.intro)}</p>
+  ${cfg.items.map(([t],i)=>`<div class="lw-item" data-i="${i}"><span class="t">${esc(t)}</span><span class="bs">${cfg.groups.map((g,j)=>`<button class="lw-pill" data-g="${j}" aria-pressed="false">${esc(g)}</button>`).join('')}</span><span class="fb" hidden></span></div>`).join('')}
+  <div class="row"><button class="btn primary sm" data-check>Check</button><button class="btn sm" data-clear>Clear</button><span class="muted" data-out style="font-size:13.5px"></span></div></div>`}
+const SORTERS={};
+function bindSorter(root){root.querySelectorAll('[data-widget="sorter"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';const cfg=SORTERS[w.dataset.cfg];const pick={};
+  w.querySelectorAll('.lw-item').forEach(it=>it.querySelectorAll('[data-g]').forEach(b=>b.addEventListener('click',()=>{pick[it.dataset.i]=+b.dataset.g;it.querySelectorAll('[data-g]').forEach(x=>x.setAttribute('aria-pressed',x===b));it.classList.remove('ok','no');it.querySelector('.fb').hidden=true})));
+  w.querySelector('[data-check]').addEventListener('click',()=>{let ok=0;cfg.items.forEach(([t,a,why],i)=>{const it=w.querySelector(`.lw-item[data-i="${i}"]`);const good=pick[i]===a;if(good)ok++;it.classList.toggle('ok',good);it.classList.toggle('no',!good);const fb=it.querySelector('.fb');fb.hidden=false;fb.textContent=(good?'✓ ':'✗ Answer: '+cfg.groups[a]+'. ')+(why||'')});
+    w.querySelector('[data-out]').textContent=`${ok} of ${cfg.items.length} correct.`});
+  w.querySelector('[data-clear]').addEventListener('click',()=>{Object.keys(pick).forEach(k=>delete pick[k]);w.querySelectorAll('.lw-item').forEach(it=>{it.classList.remove('ok','no');it.querySelector('.fb').hidden=true;it.querySelectorAll('[data-g]').forEach(x=>x.setAttribute('aria-pressed','false'))});w.querySelector('[data-out]').textContent=''})})}
+// Poll: the class commits to an answer, the teacher taps the votes, then reveals the answer and the reason.
+// items: {ctx, q, o, a, why, img?, say?:[[speaker,text]]}
+const POLLS={};
+function Poll(id){return ()=>`<div class="poll" data-widget="poll" data-cfg="${id}"><div class="poll-body"></div>
+  <div class="row" style="margin-top:10px"><button class="btn sm" data-po-prev>← Previous</button><span class="muted" data-po-n style="font-size:12.5px"></span><span class="spacer"></span><button class="btn sm" data-po-reset>Reset votes</button><button class="btn primary sm" data-po-reveal>Reveal answer</button><button class="btn sm" data-po-next>Next →</button></div></div>`}
+function bindPoll(root){root.querySelectorAll('[data-widget="poll"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';const P=POLLS[w.dataset.cfg];let i=0,stop=()=>{};const votes=P.map(p=>p.o.map(()=>0)),shown=P.map(()=>false);const body=w.querySelector('.poll-body');
+  const draw=()=>{const p=P[i],v=votes[i],tot=v.reduce((a,b)=>a+b,0),rev=shown[i];
+    body.innerHTML=`${p.img?`<div class="lt-photo sm" style="margin-bottom:8px">${(window.SCENES||{})[p.img]||''}</div>`:''}${p.ctx?`<div class="poll-ctx">${esc(p.ctx)}</div>`:''}${p.say?'<button class="btn hub sm" data-po-say style="margin-top:8px">▶ Play</button>':''}<p class="qt" style="margin:10px 0 8px">${esc(p.q)}</p>
+     <div class="poll-opts">${p.o.map((o,j)=>{const pct=tot?Math.round(v[j]/tot*100):0;return `<button class="poll-opt ${rev?(j===p.a?'right':'dim'):''}" data-vote="${j}"><span class="pl">${LETTERS[j]}</span><span class="pt">${esc(o)}</span><span class="pv">${v[j]}${rev&&tot?` · ${pct}%`:''}</span><i style="width:${rev?pct:0}%"></i></button>`}).join('')}</div>
+     ${rev?`<div class="why" style="margin-top:6px">✓ ${esc(p.why)}</div>`:'<p class="muted" style="font-size:12.5px;margin-top:6px">Students commit first. Count hands and tap each option once per vote.</p>'}`;
+    body.querySelectorAll('[data-vote]').forEach(b=>b.addEventListener('click',()=>{if(shown[i])return;votes[i][+b.dataset.vote]++;draw()}));
+    const sb=body.querySelector('[data-po-say]');if(sb)sb.addEventListener('click',()=>{stop();stop=TTS.play(p.say)});
+    w.querySelector('[data-po-n]').textContent=`${i+1} of ${P.length}`;w.querySelector('[data-po-reveal]').disabled=rev};
+  w.querySelector('[data-po-reveal]').addEventListener('click',()=>{shown[i]=true;draw()});
+  w.querySelector('[data-po-reset]').addEventListener('click',()=>{votes[i]=votes[i].map(()=>0);shown[i]=false;draw()});
+  w.querySelector('[data-po-prev]').addEventListener('click',()=>{stop();i=Math.max(0,i-1);draw()});
+  w.querySelector('[data-po-next]').addEventListener('click',()=>{stop();i=Math.min(P.length-1,i+1);draw()});draw()})}
+// Proof finder: click the words that prove each answer, then show the key. segs: [[text, 'k' if it is proof]]; qs: [[question, answer]]
+const MARKS={};
+function Marker(id){return ()=>{const M=MARKS[id];return `<div class="lw-mark" data-widget="mark" data-cfg="${id}"><p class="muted" style="font-size:13.5px;margin:0 0 8px">${esc(M.intro)}</p>
+  ${M.qs?`<ol class="gd-list" style="margin:0 0 8px">${M.qs.map(([q])=>`<li>${esc(q)}</li>`).join('')}</ol>`:''}
+  <div class="passage" style="max-height:none">${M.paras.map(p=>`<p>${p.map(([t,k],j)=>k?`<span class="seg" role="button" tabindex="0" data-k="${k}">${esc(t)}</span>`:esc(t)).join('')}</p>`).join('')}</div>
+  <div class="row" style="margin-top:8px"><button class="btn primary sm" data-mk-key>Show the proof</button><button class="btn sm" data-mk-clear>Clear</button><span class="muted" data-mk-out style="font-size:13.5px"></span></div></div>`}}
+function bindMark(root){root.querySelectorAll('[data-widget="mark"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';const M=MARKS[w.dataset.cfg];
+  const tog=s=>s.classList.toggle('on');w.querySelectorAll('.seg').forEach(s=>{s.addEventListener('click',()=>tog(s));s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog(s)}})});
+  w.querySelector('[data-mk-key]').addEventListener('click',()=>{let hit=0,n=0;w.querySelectorAll('.seg').forEach(s=>{const proof=s.dataset.k==='k';if(proof)n++;if(proof&&s.classList.contains('on'))hit++;s.classList.toggle('key',proof);s.classList.toggle('no',!proof&&s.classList.contains('on'))});
+    w.querySelector('[data-mk-out]').innerHTML=`${hit} of ${n} proof phrases found.${M.qs?' Answers: '+M.qs.map(([q,a],i)=>`${i+1}. ${esc(a)}`).join(' · '):''}`});
+  w.querySelector('[data-mk-clear]').addEventListener('click',()=>{w.querySelectorAll('.seg').forEach(s=>s.classList.remove('on','key','no'));w.querySelector('[data-mk-out]').textContent=''})})}
+// Timer: presets in seconds with labels
+function Timer(presets,note){return ()=>`<div class="stack" data-widget="timer" style="gap:10px"><div class="row" style="gap:16px"><span class="lw-clock" data-tm>${fmt(presets[0][1])}</span><span class="muted" data-tm-l style="font-size:14px">${esc(presets[0][0])}</span></div>
+  <div class="row" style="gap:6px">${presets.map(([l,sec],i)=>`<button class="lw-pill" data-sec="${sec}" data-l="${esc(l)}" aria-pressed="${i===0}">${esc(l)}</button>`).join('')}</div>
+  <div class="row" style="gap:8px"><button class="btn primary sm" data-tm-go>Start</button><button class="btn sm" data-tm-reset>Reset</button></div>${note?`<p class="muted" style="font-size:13px;margin:0">${esc(note)}</p>`:''}</div>`}
+function bindTimer(root){root.querySelectorAll('[data-widget="timer"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';let sec=+w.querySelector('[data-sec]').dataset.sec,left=sec,iv=null;const el=w.querySelector('[data-tm]');
+  const show=()=>{el.textContent=fmt(Math.max(0,left));el.classList.toggle('low',left<=Math.min(10,sec/4))};
+  const stop=()=>{if(iv)clearInterval(iv);iv=null;w.querySelector('[data-tm-go]').textContent='Start'};
+  w.querySelectorAll('[data-sec]').forEach(b=>b.addEventListener('click',()=>{stop();sec=left=+b.dataset.sec;w.querySelector('[data-tm-l]').textContent=b.dataset.l;w.querySelectorAll('[data-sec]').forEach(x=>x.setAttribute('aria-pressed',x===b));show()}));
+  w.querySelector('[data-tm-go]').addEventListener('click',e=>{if(iv){stop();return}if(left<=0)left=sec;e.currentTarget.textContent='Pause';iv=every(()=>{if(!w.isConnected){stop();return}left--;show();if(left<=0){stop();beep(520)}},1000)});
+  w.querySelector('[data-tm-reset]').addEventListener('click',()=>{stop();left=sec;show()});show()})}
+
+/* ----- Session 1 ----- */
+function TestMap(){return `<div class="tmap" data-widget="testmap"><div class="tmap-tabs">${['L','R','S','W'].map((k,i)=>`<button class="tm-tab" data-tm="${k}" style="${skv(k)}" aria-pressed="${i===0}">${icon(k,18)}<span><b>${TEST_MAP[k].name}</b><small>${TEST_MAP[k].time}</small></span></button>`).join('')}</div><div class="tm-body"></div>
+  <p class="muted" style="font-size:12.5px;margin-top:8px">Listening &amp; Reading is one test (about 2 hours). Speaking &amp; Writing is a separate test (about 80 minutes). Check current details with ETS or your test centre before you book.</p></div>`}
+function bindTestMap(root){root.querySelectorAll('[data-widget="testmap"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';const body=w.querySelector('.tm-body');
+  const show=k=>{const m=TEST_MAP[k];w.querySelectorAll('.tm-tab').forEach(b=>b.setAttribute('aria-pressed',b.dataset.tm===k));
+    body.innerHTML=`<div class="tm-head" style="${skv(k)}"><b>${m.name}</b><span>${m.count} · ${m.time}</span></div><div class="tablewrap"><table class="log"><thead><tr><th>Part</th><th>${k==='S'?'Prepare / speak':k==='W'?'Time':'Questions'}</th><th>What it is</th></tr></thead><tbody>${m.parts.map(([a,b,c])=>`<tr><td><b>${a}</b></td><td class="mono">${b}</td><td class="muted">${c}</td></tr>`).join('')}</tbody></table></div><p class="tm-tip">💡 ${m.tip}</p>`};
+  w.querySelectorAll('.tm-tab').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tm)));show('L')})}
+// Score Goal Planner: the score a job or school asks for vs. the student's targets and latest mock scores
+function GoalPlanner(){const tg=targets();const f=(k,lab,min,max,step)=>`<label class="field" for="gp-${k}">${lab}<select id="gp-${k}" data-gp="${k}"><option value="">Not required</option>${Array.from({length:(max-min)/step+1},(_,i)=>min+i*step).map(v=>`<option ${+tg[k]===v?'selected':''}>${v}</option>`).join('')}</select></label>`;
+  return `<div data-widget="goals"><div class="gp-grid">${f('L','Listening needed',100,495,5)}${f('R','Reading needed',100,495,5)}${f('S','Speaking needed',50,200,10)}${f('W','Writing needed',50,200,10)}
+   <label class="field" for="gp-T">Or a total L+R score<select id="gp-T" data-gp="T"><option value="">Not required</option>${[400,450,500,550,600,650,700,750,800,850,900,950].map(v=>`<option>${v}</option>`).join('')}</select></label></div>
+   <div class="gp-out"></div><div class="row" style="margin-top:10px"><button class="btn primary sm" data-gp-save>Use these as my targets</button><span class="muted" data-gp-msg style="font-size:13px">Aim a little above what is required, so one hard question does not decide your result.</span></div></div>`}
+function bindGoals(root){root.querySelectorAll('[data-widget="goals"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';const out=w.querySelector('.gp-out');
+  const vals=()=>{const v={};w.querySelectorAll('[data-gp]').forEach(s=>{if(s.value)v[s.dataset.gp]=+s.value});return v};
+  const draw=()=>{const v=vals();const rows=SKILL_ORDER.filter(k=>v[k]).map(k=>{const m=latestMock(k);return `<div class="gp-row"><b style="min-width:90px">${SKILL[k]}</b><span>Needed <b>${v[k]}</b></span><span class="muted">${m?`Latest mock ${m.scaled} · ${m.scaled>=v[k]?'✓ reached':`${v[k]-m.scaled} to go`}`:'No mock score yet'}</span></div>`});
+    if(v.T){const l=latestMock('L'),r=latestMock('R');const cur=l&&r?l.scaled+r.scaled:null;rows.push(`<div class="gp-row"><b style="min-width:90px">L + R total</b><span>Needed <b>${v.T}</b></span><span class="muted">${cur!=null?`Latest mocks ${cur} · ${cur>=v.T?'✓ reached':`${v.T-cur} to go`}`:'Take Mock Test 1 (Listening and Reading) to compare'}${!v.L&&!v.R?` · e.g. Listening ${Math.min(495,Math.round(v.T*0.52/5)*5)} + Reading ${Math.min(495,v.T-Math.min(495,Math.round(v.T*0.52/5)*5))}`:''}</span></div>`)}
+    out.innerHTML=rows.length?rows.join(''):'<p class="muted" style="margin:0;font-size:13.5px">Choose the scores your job or school asks for.</p>'};
+  w.querySelectorAll('[data-gp]').forEach(s=>s.addEventListener('change',draw));draw();
+  w.querySelector('[data-gp-save]').addEventListener('click',()=>{const v=vals();const t=targets();SKILL_ORDER.forEach(k=>{if(v[k])t[k]=v[k]});if(v.T&&!v.L&&!v.R){t.L=Math.min(495,Math.round(v.T*0.52/5)*5);t.R=Math.min(495,v.T-t.L)}store.set('targets',t);w.querySelector('[data-gp-msg]').textContent='Saved. Your dashboard now shows these targets.'})})}
+const SIM_STEPS=[
+ {k:'L',head:'Listening · Part 1 · Photographs',q:'Question 1',body:()=>`<div class="lt-photo sm">${(window.SCENES||{}).p_typing||''}</div><p style="margin:8px 0">You hear four statements, (A) to (D). They are not printed. Mark A, B, C or D.</p><div class="lt-letters">${'ABCD'.split('').map(L=>`<span class="lt-let"><span>${L}</span></span>`).join('')}</div>`,note:'The statements are spoken once. Look at the photo and name the people, actions and objects before the audio starts.'},
+ {k:'L',head:'Listening · Part 2 · Question-Response',q:'Question 7',body:()=>`<p>“Mark your answer.” Nothing else is printed.</p><div class="lt-letters">${'ABC'.split('').map(L=>`<span class="lt-let"><span>${L}</span></span>`).join('')}</div>`,note:'Only THREE choices in Part 2. The first words of the question decide the answer.'},
+ {k:'L',head:'Listening · Part 3 · Conversations',q:'Questions 32–34',body:()=>`<p><b>32.</b> What are the speakers discussing?<br>(A) A delivery (B) A meeting (C) A budget (D) A hire</p><p><b>33.</b> What does the woman ask for?<br>…</p>`,note:'Questions and choices are printed. Read them before the conversation starts.'},
+ {k:'R',head:'Reading · Parts 5–7',q:'75 minutes for 100 questions',body:()=>`<p><b>101.</b> The quarterly report ______ by Friday.<br>(A) finish (B) will be finished (C) finishing (D) to finish</p>`,note:'One timer for all of Reading. You can go back. Keep to a time plan so Part 7 gets enough time.'},
+ {k:'S',head:'Speaking · Question 3 · Describe a picture',q:'Prepare 45 s · Speak 30 s',body:()=>`<div class="stage" data-sim-stage><div class="clock" data-sim-clock>0:05</div><div><div class="eyebrow" data-sim-phase>Preparation</div><div class="muted" style="font-size:13px">Demo runs fast: 5 s prepare, 5 s speak.</div></div></div><button class="btn hub sm" data-sim-go style="margin-top:8px">Start demo</button>`,note:'Recording starts by itself when preparation ends. Speak until the time is up.'},
+ {k:'W',head:'Writing · Question 6 · Respond to a written request',q:'10 minutes',body:()=>`<div class="prompt" style="font-size:13.5px">Respond to the e-mail. Ask TWO questions and make ONE request.</div><textarea class="write" style="min-height:90px;margin-top:8px" placeholder="Dear Ms. Ruiz," data-sim-ta></textarea><div class="muted" style="font-size:12.5px" data-sim-wc>0 words</div>`,note:'Count the tasks in the directions. Do each one clearly.'}];
+function Simulator(){return `<div class="sim" data-widget="sim"><div class="sim-screen"></div>
+  <div class="row" style="margin-top:10px"><button class="btn sm" data-sim-prev>← Previous screen</button><span class="muted" data-sim-n style="font-size:12.5px"></span><span class="spacer"></span><button class="btn primary sm" data-sim-next>Next →</button></div></div>`}
+function bindSim(root){root.querySelectorAll('[data-widget="sim"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';let i=0;const scr=w.querySelector('.sim-screen');
+  const draw=()=>{const st=SIM_STEPS[i];scr.innerHTML=`<div class="sim-bar" style="${skv(st.k)}"><b>${st.head}</b><span>${st.q}</span></div><div class="sim-body">${st.body()}</div><div class="sim-note">🎓 ${st.note}</div>`;
+    w.querySelector('[data-sim-n]').textContent=`Screen ${i+1} of ${SIM_STEPS.length}`;
+    const ta=scr.querySelector('[data-sim-ta]');if(ta)ta.addEventListener('input',()=>{scr.querySelector('[data-sim-wc]').textContent=(ta.value.trim().match(/\S+/g)||[]).length+' words'});
+    const go=scr.querySelector('[data-sim-go]');if(go)go.addEventListener('click',()=>{go.disabled=true;const st2=scr.querySelector('[data-sim-stage]'),ck=scr.querySelector('[data-sim-clock]'),ph=scr.querySelector('[data-sim-phase]');let left=5,phase='prep';ck.textContent='0:05';
+      const iv=every(()=>{left--;ck.textContent='0:0'+Math.max(0,left);if(left<=0){if(phase==='prep'){phase='speak';left=5;ph.textContent='● Recording';st2.classList.add('speak');beep(880)}else{clearInterval(iv);ph.textContent='Time is up';st2.classList.remove('speak');beep(520);go.disabled=false}}},1000)})};
+  w.querySelector('[data-sim-next]').addEventListener('click',()=>{i=Math.min(SIM_STEPS.length-1,i+1);draw()});
+  w.querySelector('[data-sim-prev]').addEventListener('click',()=>{i=Math.max(0,i-1);draw()});draw()})}
+
+/* ----- session data for the engines ----- */
+Object.assign(SORTERS,{
+ qword:{id:'qword',intro:'Part 2. Which question does each response answer? Tap a question word for each one.',groups:['Who…?','When…?','Where…?','Why…?','How many…?'],items:[
+  ['“Next to the elevators.”',2,'A place answers Where.'],['“Ms. Patel from accounting.”',0,'A person answers Who.'],['“Because the flight was delayed.”',3,'A reason answers Why.'],['“Not until next spring.”',1,'A time answers When.'],['“About thirty, I think.”',4,'A number answers How many.'],['“I’ll ask the receptionist.”',2,'Indirect answers fit many questions. Here: “Where is the meeting room?” → “I’ll ask the receptionist.”'],['“The new intern, I believe.”',0,'A person: Who.'],['“To meet a client.”',3,'“To + verb” gives a purpose: Why.']]},
+ talks:{id:'talks',intro:'Part 4. What kind of talk does each opening line come from?',groups:['Voicemail','Announcement','Tour','Advertisement','News report'],items:[
+  ['“Hi, this is Ben from Lakeside Motors, returning your call…”',0,'“This is… returning your call” is a telephone message.'],['“Attention, passengers on the 6:15 train to Glasgow…”',1,'“Attention, passengers” starts an announcement.'],['“Welcome to the Dalton Museum. Please follow me to the first gallery.”',2,'“Follow me” — a guide on a tour.'],['“Tired of slow internet? Switch to SpeedNet today!”',3,'A question + a product name = advertisement.'],['“In local news, the city council voted last night to…”',4,'“In local news” starts a news report.'],['“Good morning, shoppers. Our café is now open on the second floor.”',1,'Store announcements start with “Attention” or “Good morning, shoppers”.']]},
+ qtype:{id:'qtype',intro:'Part 5. Look at the answer choices only. Is the question about word form, grammar or meaning?',groups:['Word form','Grammar','Meaning'],items:[
+  ['(A) decide (B) decision (C) decisive (D) decisively',0,'Same root, four endings: word form.'],['(A) for (B) since (C) during (D) until',1,'Prepositions and conjunctions: grammar.'],['(A) postpone (B) attend (C) reserve (D) approve',2,'Four different verbs: choose by meaning.'],['(A) will be sent (B) sent (C) sending (D) has sent',1,'Tense and voice: grammar.'],['(A) he (B) him (C) his (D) himself',1,'Pronoun forms: grammar.'],['(A) accurate (B) accuracy (C) accurately (D) accuracies',0,'Same root, different endings: word form.'],['(A) deadline (B) headline (C) outline (D) guideline',2,'Different nouns: meaning.'],['(A) although (B) despite (C) because of (D) in order to',1,'What follows the blank (noun or clause) decides: grammar.']]},
+ wfam:{id:'wfam',intro:'Word families. What part of speech is each word?',groups:['Noun','Verb','Adjective','Adverb'],items:[
+  ['efficiency',0,'-ency is a noun ending.'],['efficiently',3,'-ly on an adjective makes an adverb.'],['analyze',1,'-ize is a verb ending.'],['analytical',2,'-ical is an adjective ending.'],['employment',0,'-ment is a noun ending.'],['strengthen',1,'-en can make a verb (strong → strengthen).'],['reliable',2,'-able is an adjective ending.'],['punctually',3,'-ly adverb.'],['applicant',0,'-ant can be a person noun.'],['negotiate',1,'-ate is often a verb ending.']]},
+ conn:{id:'conn',intro:'Part 6. What does each connector signal?',groups:['Add','Contrast','Result','Example','Time'],items:[
+  ['In addition',0],['However',1],['Therefore',2],['For instance',3],['Meanwhile',4],['Nevertheless',1],['As a result',2],['Furthermore',0],['Afterward',4],['Consequently',2],['In contrast',1],['Such as',3]]},
+ p7type:{id:'p7type',intro:'Part 7. What type of question is each one?',groups:['Main idea','Detail','NOT true','Inference','Word meaning'],items:[
+  ['“What is the purpose of the memo?”',0,'Purpose = main idea.'],['“When will the renovation be completed?”',1,'A specific fact: detail.'],['“What is NOT mentioned as a benefit of membership?”',2,'NOT question: find three, choose the fourth.'],['“What is suggested about Mr. Ito?”',3,'“Suggested” means not said directly: inference.'],['“The word ‘figures’ in paragraph 2 is closest in meaning to…”',4,'Word meaning in context.'],['“Why was the e-mail sent?”',0,'The reason for the whole text: main idea.'],['“How much does the premium plan cost?”',1,'A number from the text: detail.'],['“What will Ms. Ruiz most likely do next?”',3,'“Most likely” = inference.']]},
+ topics:{id:'topics',intro:'Sort each word into its business topic.',groups:['Office & HR','Money & sales','Travel & events','Facilities'],items:[
+  ['payroll',0,'The list of salaries paid to staff.'],['invoice',1,'A bill.'],['itinerary',2,'A travel plan.'],['renovation',3,'Repair and improvement of a building.'],['recruit',0,'To find new employees.'],['quote',1,'A price given before a job.'],['venue',2,'The place where an event happens.'],['maintenance',3,'Keeping equipment or buildings working.'],['probation',0,'A trial period for a new employee.'],['revenue',1,'Money earned from sales.'],['registration',2,'Signing up for an event.'],['janitor',3,'A person who cleans a building.']]},
+ colloc:{id:'colloc',intro:'Collocations. Which verb goes with each noun?',groups:['meet','submit','place','hold','launch'],items:[
+  ['___ a deadline',0],['___ an order',2],['___ a report',1],['___ a meeting',3],['___ a new product',4],['___ customer needs',0],['___ an application',1],['___ a conference',3],['___ an advertisement in a newspaper',2],['___ a marketing campaign',4]]},
+ traps:{id:'traps',intro:'Part 2. Why is each wrong response wrong? Question: “When is the sales report due?”',groups:['Sound-alike','Repeated word','Wrong question type','Yes/No to a WH-question'],items:[
+  ['“The sails are white.”',0,'“Sails” sounds like “sales”.'],['“I read the sales report.”',1,'It repeats “sales report” but gives no time.'],['“In Ms. Kim’s office.”',2,'A place answers Where, not When.'],['“Yes, it is.”',3,'“When” cannot be answered with yes.'],['“It’s due to the weather.”',1,'It repeats “due” with another meaning.']]}});
+Object.assign(POLLS,{
+ photo:[{img:'p_meeting',q:'Which statement best describes the picture?',o:['They’re moving a table.','A woman is pointing at a board.','The papers are being printed.','Everyone is standing.'],a:1,why:'Only one woman stands, and she points at the whiteboard. Two people sit at the table.'},
+  {img:'p_boxes',q:'Which statement best describes the picture?',o:['Some boxes are on a cart.','A worker is lifting a box.','The shelves are empty.','A truck is being unloaded.'],a:0,why:'No people are in the picture, so any statement with a person doing something is wrong.'},
+  {img:'p_shop',q:'Which statement best describes the picture?',o:['The shelves are being stocked.','A man is paying with cash.','A bag is being handed over.','A woman is trying on clothes.'],a:2,why:'“Is being handed over” describes the action happening: the woman passes the bag across the counter.'}],
+ part2:[{say:[['Woman','Where should I put these boxes?'],['Man','A. Five boxes. B. In the storage room. C. They’re heavy.']],q:'“Where should I put these boxes?”',o:['Five boxes.','In the storage room.','They’re heavy.'],a:1,why:'“Where” needs a place.'},
+  {say:[['Man','Didn’t you order more paper?'],['Woman','A. Yes, it arrives tomorrow. B. In order of size. C. The newspaper.']],q:'“Didn’t you order more paper?”',o:['Yes, it arrives tomorrow.','In order of size.','The newspaper.'],a:0,why:'B repeats “order”; C repeats “paper”. A answers the question.'},
+  {say:[['Woman','Would you rather meet today or tomorrow?'],['Man','A. Yes, I would. B. Tomorrow works better for me. C. We met last week.']],q:'“Would you rather meet today or tomorrow?”',o:['Yes, I would.','Tomorrow works better for me.','We met last week.'],a:1,why:'A choice question needs a choice, not yes/no.'},
+  {say:[['Man','The client called while you were out.'],['Woman','A. Thanks, I’ll call her back. B. It’s cold outside. C. Out of paper.']],q:'“The client called while you were out.”',o:['Thanks, I’ll call her back.','It’s cold outside.','Out of paper.'],a:0,why:'A statement is answered with a reaction or an action. B and C play with the word “out”.'}],
+ implied:[{say:[['Man','Can you finish the slides by noon?'],['Woman','I have three meetings this morning.']],q:'What does the woman mean when she says, “I have three meetings this morning”?',o:['She will finish early.','She probably cannot finish by noon.','She wants to cancel the meetings.','She needs more slides.'],a:1,why:'She does not say no directly. Three meetings means she has no time: an implied no.'},
+  {say:[['Woman','The printer’s jammed again.'],['Man','I’ll get the manual.']],q:'Why does the man say, “I’ll get the manual”?',o:['He wants to read about a new printer.','He offers to help fix the problem.','He needs to print a manual.','He is going home.'],a:1,why:'The manual shows how to fix the printer: he is offering help.'},
+  {say:[['Man','Did you see the price the supplier quoted?'],['Woman','I almost fell off my chair.']],q:'What does the woman imply?',o:['The price was surprisingly high.','Her chair is broken.','She did not see the price.','The price was fair.'],a:0,why:'“I almost fell off my chair” is an expression of shock: the price was very high.'}],
+ fit:[{ctx:'“Our new booking system goes live on Monday. ____ Staff can find a short user guide on the intranet.”',q:'Which sentence fits the blank?',o:['All appointments will be made online from that day.','The old office will be painted.','Monday is a public holiday.','Our clients are very important.'],a:0,why:'It continues “booking system… Monday” and leads to the user guide for staff.'},
+  {ctx:'“We have received your application for the sales position. ____ We will contact you by May 10 to arrange an interview.”',q:'Which sentence fits the blank?',o:['Our team is currently reviewing all applications.','The salary is paid monthly.','Please send us your bank details.','Our store opened in 2005.'],a:0,why:'Reviewing applications comes between receiving them and contacting candidates.'}],
+ mapset:[{ctx:'Text 1: a hotel’s price list for meeting rooms. Text 2: an e-mail booking a room for 35 people.',q:'Which question probably needs BOTH texts?',o:['How much will the company pay for the room?','Who wrote the e-mail?','What is the hotel’s address?','When was the e-mail sent?'],a:0,why:'The price is in Text 1, and the number of people (which decides the room) is in Text 2.'},
+  {ctx:'Text 1: a job advertisement. Text 2: an applicant’s cover letter. Text 3: an interview schedule.',q:'“When will the applicant most likely be interviewed?” Where do you look?',o:['Text 2 for the applicant’s name, then Text 3 for the time','Only Text 1','Only Text 2','Text 1 for the salary'],a:0,why:'Find the name in the letter, then the matching slot in the schedule. Cross-text questions link a detail from one text to another.'}]});
+Object.assign(MARKS,{
+ order:{intro:'Part 3. Read the questions, then click the words that prove each answer. Notice that the answers come in order.',qs:[['Why is the woman calling?','To change a delivery date'],['What problem does the man mention?','A driver is sick'],['What will the woman do next?','Send an e-mail']],
+  paras:[[['Woman: Hi, I’m calling from Lane Bakery. '],['We need to move our flour delivery from Tuesday to Thursday.','k']],[['Man: Thursday should be fine. The only problem is that '],['one of our drivers is sick this week','k'],[', so it might arrive in the afternoon.']],[['Woman: That’s OK. '],['I’ll e-mail you the new delivery address too','k'],[', because we’ve moved to a bigger kitchen.']]]},
+ clue:{intro:'Part 6. Click the words OUTSIDE each sentence that tell you the answer.',qs:[['Blank 1: (A) attends (B) attended (C) will attend (D) attending','will attend: “next month” shows the future'],['Blank 2: (A) However (B) Therefore (C) For example (D) Instead','However: “sold out” is bad news after good news']],
+  paras:[[['Next month','k'],[', our CEO ____ (1) the Tokyo Business Forum. The forum is the largest event of its kind in Asia.']],[['Our team ',''],['was hoping to join her','k'],['. ____ (2), the tickets ',''],['are already sold out','k'],['.']]]},
+ proof:{intro:'Part 7. Click the sentence that proves each answer.',qs:[['When does the sale end?','Sunday, June 30'],['What do members receive?','An extra 5% off'],['What is NOT on sale?','Gift cards']],
+  paras:[[['Summer Sale at Harper’s Home Store! All furniture and kitchenware is 20% off '],['until Sunday, June 30','k'],['.']],[['Harper’s Club members '],['save an extra 5%','k'],[' on every purchase. '],['Gift cards are not included in the sale','k'],['. Free delivery on orders over $200.']]]},
+ xref:{intro:'Multiple passages. Click the two facts you need to answer: “How much will Ms. Lin pay?”',paras:[[['Price list: Standard cleaning $80 · '],['Deep cleaning $140','k'],[' · Window cleaning $60.']],[['Ms. Lin’s e-mail: Our office has never been cleaned properly, so '],['we would like the most thorough service you offer','k'],[' next Friday.']]]}});
+Object.assign(LIVE_WIDGETS,{
+ TESTMAP:['Test Map','Click a section to see every part, question count and time.',TestMap,bindTestMap],
+ GOALS:['Score Goal Planner','Enter the scores your job or school asks for. See the gap to your latest mock scores, then save them as your targets.',GoalPlanner,bindGoals],
+ SIM:['Test Screen Simulator','Walk through how each part of both tests looks and behaves.',Simulator,bindSim],
+ PHOTO:['Photo Prediction Board','Look at the photo for five seconds, name the people, actions and objects, then vote.',Poll('photo'),bindPoll],
+ QWORD:['Question-Word Sorter','Match each response to the question word it answers.',Sorter(SORTERS.qword),bindSorter],
+ TRAPS:['Trap Spotter','Name the trap in each wrong Part 2 response.',Sorter(SORTERS.traps),bindSorter],
+ POLL2:['Prediction Poll','Play a Part 2 item, let students commit to A, B or C, then reveal the split and the reason.',Poll('part2'),bindPoll],
+ READAHEAD:['Read-Ahead Timer','Practise reading three questions in the pause before each Part 3 or 4 recording.',Timer([['Read 3 questions',8],['Answer pause',8],['Graphic question',12]],'Read the question stems first, then the choices if there is time.'),bindTimer],
+ ORDER:['Answer-Order Tracker','Find the proof for each question in a transcript and see that the answers come in order.',Marker('order'),bindMark],
+ TALKS:['Talk-Type Sorter','Sort opening lines by talk type: who is speaking, to whom and why.',Sorter(SORTERS.talks),bindSorter],
+ IMPLIED:['Implied-Meaning Poll','“What does the speaker mean when she says…?” Vote, then reveal.',Poll('implied'),bindPoll],
+ QTYPE:['Question-Type Spotter','Look only at the choices: word form, grammar or meaning?',Sorter(SORTERS.qtype),bindSorter],
+ WFAM:['Word Family Builder','Name the part of speech from the ending.',Sorter(SORTERS.wfam),bindSorter],
+ SPEED:['Speed Round Timer','About 20 seconds per Part 5 question.',Timer([['One Part 5 question',20],['Five questions',100],['All of Part 5',600]]),bindTimer],
+ CLUE:['Clue Highlighter','Click the words outside the sentence that prove the answer.',Marker('clue'),bindMark],
+ CONN:['Connector Sorter','Sort connectors by what they signal.',Sorter(SORTERS.conn),bindSorter],
+ FIT:['Sentence Fit Check','Test each choice between the sentence before and the sentence after.',Poll('fit'),bindPoll],
+ P7TYPE:['Question-Type Spotter','Name the Part 7 question type before reading.',Sorter(SORTERS.p7type),bindSorter],
+ PROOF:['Proof Finder','Click the sentence that proves each answer.',Marker('proof'),bindMark],
+ PACE:['Part 7 Pace Clock','A time budget per passage or set.',Timer([['Short text (2–3 Qs)',120],['Longer text (4 Qs)',240],['Double passage',300],['Triple passage',330]],'About 1 minute per question, a little more for multiple passages.'),bindTimer],
+ MAPSET:['Passage Map','Decide what each text is and which questions need two texts.',Poll('mapset'),bindPoll],
+ XREF:['Cross-Reference Finder','Find the two facts in two texts that answer one question.',Marker('xref'),bindMark],
+ TOPICS:['Topic Word Wall','Sort business words by topic.',Sorter(SORTERS.topics),bindSorter],
+ COLLOC:['Collocation Match','Choose the verb that goes with each noun.',Sorter(SORTERS.colloc),bindSorter],
+ PARA:['Paraphrase Pairs','Same idea, different words: vote on the paraphrase.',Poll('para'),bindPoll],
+ COMPARE:['Progress Comparison','Your Session 1 baseline next to your latest mock scores and targets.',()=>`<div data-widget="compare"></div>`,root=>root.querySelectorAll('[data-widget="compare"]').forEach(w=>{const b=store.get('baseline',null),tg=targets();
+   w.innerHTML=`<div class="tablewrap"><table class="log"><thead><tr><th>Section</th><th>Baseline</th><th>Latest mock</th><th>Target</th></tr></thead><tbody>${SKILL_ORDER.map(k=>{const m=latestMock(k);return `<tr><td>${SKILL[k]}</td><td class="mono">${b&&b[k]!=null?(k==='L'||k==='R'?b[k]+'%':(b[k]/20).toFixed(1)+'/5'):'–'}</td><td class="mono">${m?m.scaled:'–'}</td><td class="mono">${tg[k]}</td></tr>`}).join('')}</tbody></table></div><p class="muted" style="font-size:13px;margin:6px 0 0">${cloud.tpass&&!cloud.code?'This shows the signed-in student’s data. Open a student in the Teacher Portal to see theirs.':'Baseline: your Session 1 check. Mock: the estimated scaled score.'}</p>`})],
+ CHECK:['Test-Day Checklist','Tick each item. It is saved on this device.',()=>`<ul class="tasks" data-widget="tdcheck">${['Valid photo ID (the same name as your registration)','Know the route and arrive early','Sleep well the night before','Pencils and eraser if it is a paper test','Water and a light snack for the break, if allowed','Phone switched off and put away','Plan: never leave a blank, follow your Reading time plan','Speaking: use all the time · Writing: do every task'].map((t,i)=>`<li><input type="checkbox" id="td-${i}" data-td="${i}"><label for="td-${i}"><b>${esc(t)}</b></label></li>`).join('')}</ul>`,root=>root.querySelectorAll('[data-widget="tdcheck"]:not([data-bound])').forEach(w=>{w.dataset.bound='1';const v=store.get('tdcheck',{});w.querySelectorAll('[data-td]').forEach(c=>{c.checked=!!v[c.dataset.td];c.addEventListener('change',()=>{const x=store.get('tdcheck',{});x[c.dataset.td]=c.checked;_set('tdcheck',x)})})})]});
+POLLS.para=[{q:'“The meeting has been pushed back.”',o:['The meeting is later than planned.','The meeting is cancelled.','The meeting room changed.','The meeting is earlier.'],a:0,why:'“Push back” = postpone, move to a later time.'},
+ {q:'“We’re short-staffed today.”',o:['We do not have enough workers today.','Our staff are short.','We close early today.','We are hiring today.'],a:0,why:'Short-staffed = not enough staff.'},
+ {q:'“The item is on back order.”',o:['It is not in stock yet but has been ordered.','It was returned.','It is on the back shelf.','It is discounted.'],a:0,why:'Back order = ordered but not yet available.'},
+ {q:'“Please RSVP by Friday.”',o:['Reply to say if you will come.','Pay by Friday.','Bring a guest.','Arrive early.'],a:0,why:'RSVP = tell the host whether you will attend.'}];
+// Session tools in class (Speaking and Writing tools are added with those tools)
+Object.entries({1:['TESTMAP','GOALS','SIM'],2:['PHOTO','QWORD','TRAPS','POLL2'],3:['READAHEAD','ORDER','TALKS','IMPLIED'],4:['QTYPE','WFAM','SPEED'],5:['CLUE','CONN','FIT'],6:['P7TYPE','PROOF','PACE'],7:['MAPSET','XREF','PACE'],8:['TOPICS','COLLOC','PARA'],12:['COMPARE','CHECK']}).forEach(([n,w])=>{const s=SESSIONS[n-1];s.widgets=w;s.liveTools=w.map(k=>[LIVE_WIDGETS[k][0],LIVE_WIDGETS[k][1]])});
+
+/* ---------- diagnostic summary (Session 1) ---------- */
+function band(v,k){if(v==null)return ['Not done yet',''];if(k==='L'||k==='R')return v>=75?['Strong','good']:v>=50?['Developing','mid']:['Building','low'];const x=v/20;return x>=3.75?['Strong','good']:x>=2.5?['Developing','mid']:['Building','low']}
+function Diag(host){const r=results();const g=k=>r['1:'+k];
+  const L=g('DL')?g('DL').pct:null,R=g('DR')?g('DR').pct:null;
+  const sp=['DS1','DS2'].map(g).filter(x=>x&&x.self!=null).map(x=>x.self);const S=sp.length?Math.round(sp.reduce((a,b)=>a+b,0)/sp.length):null;
+  const W=g('DW')&&g('DW').self!=null?g('DW').self:(g('DW')&&g('DW').ai?aiPct(g('DW').ai):null);
+  const vals={L,R,S,W};const base=store.get('baseline',null);const ready=L!=null&&R!=null;
+  const show=k=>{const v=vals[k];const [b,c]=band(v,k);return `<div class="dg" style="${skv(k)}"><span class="ic">${icon(k,18)}</span><div><b>${SKILL[k]}</b><span class="muted">${v==null?'—':(k==='L'||k==='R'?v+'% correct':(v/20).toFixed(1)+' / 5')}</span></div><span class="rchip ${c}">${b}</span></div>`};
+  host.innerHTML=`<div class="tool"><div class="tool-head"><span class="chip hub">Your starting point</span><h3>Diagnostic summary</h3></div>
+   <div class="tool-body"><div class="dgrid">${SKILL_ORDER.map(show).join('')}</div>
+   <p class="muted" style="font-size:13px">A starting point for your study plan, not a TOEIC score. Strong ≈ ready to build on · Developing ≈ needs regular practice · Building ≈ start here. Speaking and Writing baselines are added when those Study Hub tasks open.</p>
+   ${base?`<div class="notice" style="background:var(--hub-soft)">Baseline saved on ${esc(base.date)}. You will compare it in Session 12.</div>`:''}
+   <div class="row"><button class="btn primary" id="dg-save" ${ready?'':'disabled'}>${base?'Update my baseline':'Save as my baseline'}</button><span class="muted" style="font-size:13px">${ready?'Your teacher sees this in your progress.':'Finish the Listening and Reading checks above first.'}</span></div></div></div>`;
+  const b=host.querySelector('#dg-save');if(b)b.addEventListener('click',()=>{store.set('baseline',{date:new Date().toISOString().slice(0,10),L,R,S,W});const rr=results();rr['1:DIAG']={at:Date.now(),baseline:{L,R,S,W}};store.set('res',rr);Diag(host)})}
 function bindWidgets(root){Object.values(LIVE_WIDGETS).forEach(w=>w[3](root))}
 /* ---------- embedded slide decks (Canva, Google Slides, ...) ---------- */
 function normDeck(raw){let v=String(raw||'').trim();const m=v.match(/src\s*=\s*["']([^"']+)["']/i);if(m)v=m[1];v=v.replace(/&amp;/g,'&');
