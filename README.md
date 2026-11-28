@@ -9,10 +9,18 @@ A 12-session TOEIC prep course website for adult learners who need a TOEIC score
 This is an independent course. It is not affiliated with or endorsed by ETS. TOEIC is a registered trademark of ETS. All practice questions, passages, audio scripts and sample answers are original.
 
 ```
-index.html              the whole website (one file)
+index.html              the whole website (app and design)
+practice/listening.js   Study Hub Listening sets (Parts 1–4)
+practice/reading.js     Study Hub Reading sets (Parts 5–7) and drills
+assets/scenes.js        the picture kit for photos (Part 1, Speaking, Writing)
+assets/practice-scenes.js  the practice photos
 apps-script/Code.gs     the backend you paste into Google Apps Script
 tests/                  Playwright checks with a stand-in backend (for development)
 ```
+
+## Listening audio
+
+Listening uses the browser's built-in voices (text-to-speech), so no audio files are needed. Men's and women's lines use male and female voices. Like the test, every recording plays once and moves on by itself. Chrome and Edge have the best voices; on a phone, turn off silent mode.
 
 ## 1. Set up the Google Sheet and Apps Script (about 10 minutes)
 
@@ -100,7 +108,15 @@ Each student can score up to 10 responses a day (`AI_DAILY_LIMIT` in `Code.gs`).
 The tests use the pre-installed Playwright and a stand-in for the Apps Script backend (`tests/fake-gas.js` runs the real `Code.gs` in memory):
 
 ```bash
+node tests/backend.js
+```
+
+```bash
+node tests/practice.js
+```
+
+```bash
 node tests/crawl.js
 ```
 
-It signs in as the teacher and as a student and opens every page at desktop and phone widths, in light and dark mode, and fails on page errors, sideways scrolling, or text such as `NaN` or `undefined`.
+`practice.js` plays Listening and Reading sets through (with a fast stand-in for the browser voices) and checks scoring, the Error Log and that correct answers are spread evenly across A–D. `crawl.js` signs in as the teacher and as a student and opens every page at desktop and phone widths, in light and dark mode, and fails on page errors, sideways scrolling, or text such as `NaN` or `undefined`.

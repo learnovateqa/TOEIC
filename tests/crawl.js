@@ -16,7 +16,7 @@ const problems = [];
 async function setup(page) {
   await page.route('**/*', async route => {
     const url = route.request().url();
-    if (url.startsWith(API)) {
+    if (url.startsWith('https://script.google.com/')) {
       const body = route.request().postData() || '{}';
       return route.fulfill({ status: 200, contentType: 'application/json', body: backend.post(body) });
     }
@@ -25,7 +25,7 @@ async function setup(page) {
       const f = path.join(ROOT, p);
       if (!fs.existsSync(f)) return route.fulfill({ status: 404, body: 'not found' });
       let data = fs.readFileSync(f);
-      if (p === 'index.html') data = Buffer.from(data.toString('utf8').replace("API_URL:'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'", `API_URL:'${API}'`));
+      if (p === 'index.html') data = Buffer.from(data.toString('utf8').replace(/API_URL:'[^']*'/, `API_URL:'${API}'`));
       return route.fulfill({ status: 200, contentType: TYPES[path.extname(f)] || 'application/octet-stream', body: data });
     }
     return route.fulfill({ status: 200, contentType: 'text/plain', body: '' }); // fonts, external scripts: offline in tests
